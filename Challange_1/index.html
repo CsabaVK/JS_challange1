@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Template</title>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+		<link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="styles/mystyle.css">
+		<script src="scripts/main.js" defer></script>
+		<script src="/bootstrap-5/js/bootstrap.min.js"></script>
+
+	</head>
+	<body>
+		<div class="text-center fs-1 pt-3">Spaceship data</div>
+
+		<div class="row align-items-start text-center pt-4 m-0">
+			<div class="col bg-primary rounded rounded-3 m-3">
+				<p class="fs-3">Parameters</p>
+				<div class="text-start">
+					<div class="float-start">
+						<p>Fuel</p>
+						<p>Throttle</p>
+						<p>Speed</p>
+						<p>Acceleration (G-Force)</p>
+					</div>
+					<div class="float-end">
+						<p>-</p>
+						<p>0</p>
+						<p>0</p>
+						<p>0</p>
+					</div>
+				</div>
+			</div>
+			<div class="col bg-success rounded rounded-3 m-3">
+				<p class="fs-3">Environment</p>
+				<div class="text-start">
+					<p>Gravity</p>
+					<p>Distance Traveled</p>
+					<p>Atmosphere</p>
+					<br>
+				</div>
+			</div>
+			<div class="col bg-warning rounded rounded-3 m-3">
+			  	<p class="fs-3">Supplies</p>
+				  <div class="text-start">
+					<p>Food</p>
+					<p>Water</p>
+				</div>
+			</div>
+			<div class="col bg-info rounded rounded-3 m-3">
+				<p class="fs-3">Metrics</p>
+				<div class="text-start">
+					<p>Gravity Converter</p>
+					<p>Mars Miles to Earth Miles</p>
+				</div>
+			</div>
+		</div>
+  
+  <!-- Starting Modal -->
+  <div class="modal fade" id="startmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content bg-dark">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel"><span class="text-light">Choose starting location</span></h5>
+		</div>
+		<div class="modal-body">
+		  <div class="row align-self-center">
+			<div class="col-4">asd</div>
+			<div class="col-4">asd</div>
+			<div class="col-4">asd</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
+		
+		<footer id="footer" class="fixed-bottom p-2 bg-dark">
+			<span class="float-start fs-3">Time Travel</span>
+			<span class="float-end btn btn-warning align-middle">Next Day</span>
+			<span class="float-end fs-5 px-3">Days passed since start: 0</span>
+		</footer>
+	</body>
+
+</html>
