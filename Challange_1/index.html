@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Template</title>
+		<link rel="icon" href="/images/r_ico.png">
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
@@ -25,61 +26,146 @@
 						<p>Speed</p>
 						<p>Acceleration (G-Force)</p>
 					</div>
-					<div class="float-end">
-						<p>-</p>
-						<p>0</p>
-						<p>0</p>
-						<p>0</p>
+					<div class="float-end text-end">
+						<p><span id="datap1">0</span>%</p>
+						<p id="datap2">0</p>
+						<p id="datap3">0</p>
+						<p id="datap4">0</p>
 					</div>
 				</div>
 			</div>
 			<div class="col bg-success rounded rounded-3 m-3">
 				<p class="fs-3">Environment</p>
-				<div class="text-start">
+				<div class="text-start float-start">
 					<p>Gravity</p>
 					<p>Distance Traveled</p>
 					<p>Atmosphere</p>
-					<br>
+				</div>
+				<div class="float-end text-end">
+					<p id="datae1">-</p>
+					<p id="datae2">-</p>
+					<p id="datae3">-</p>
 				</div>
 			</div>
 			<div class="col bg-warning rounded rounded-3 m-3">
 			  	<p class="fs-3">Supplies</p>
-				  <div class="text-start">
+				  <div class="text-start float-start">
 					<p>Food</p>
 					<p>Water</p>
+				</div>
+				<div class="text-end float-end">
+					<p><span id="datas1">0</span> kcal</p>
+					<p><span id="datas2">0</span> L</p>
 				</div>
 			</div>
 			<div class="col bg-info rounded rounded-3 m-3">
 				<p class="fs-3">Metrics</p>
-				<div class="text-start">
-					<p>Gravity Converter</p>
-					<p>Mars Miles to Earth Miles</p>
+				<div class="text-start float-start">
+					<p>Earth to Moon</p>
+					<p>Earth to Mars</p>
+				</div>
+				<div class="text-end float-end">
+					<p>384k km</p>
+					<p>322M km</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="p-2 mx-3 rounded border border-primary">
+			<p class="fs-3 text-center">Inventory</p>
+			<div class="row text-center">
+				<div class="col">
+					<img id="inv1" class="items border rounded" src="/images/items/empty.png" alt="">
+				</div>
+				<div class="col">
+					<img id="inv2" class="items border rounded" src="/images/items/empty.png" alt="">
+				</div>
+				<div class="col">
+					<img id="inv3" class="items border rounded" src="/images/items/empty.png" alt="">
+				</div>
+				<div class="col">
+					<img id="inv4" class="items border rounded" src="/images/items/empty.png" alt="">
+				</div>
+				<div class="col">
+					<img id="inv5" class="items border rounded" src="/images/items/empty.png" alt="">
+				</div>
+				<div class="col">
+					<img id="inv6" class="items border rounded" src="/images/items/empty.png" alt="">
+				</div>
+				<div class="col">
+					<img id="inv7" class="items border rounded" src="/images/items/empty.png" alt="">
+				</div>
+				<div class="col">
+					<img id="inv8" class="items border rounded" src="/images/items/empty.png" alt="">
+				</div>
+			</div>
+		</div>
+
+		<div class="p-2 mx-3 rounded border border-warning mt-3">
+			<p class="fs-3 text-center">Next Move</p>
+			<div class="row">
+				<div class="col text-center">
+
+
+					<div class="btn btn-warning mx-2">
+						<p class="m-0">Move to <span id="planet1">Moon</span></p>
+						<img class="nextmoveicon" src="/images/moon.png" alt="">
+					</div>
+					
+					<div class="btn btn-warning mx-2">
+						<p class="m-0">Move to <span id="planet2">Mars</span></p>
+						<img class="nextmoveicon" src="/images/mars.png" alt="">
+					</div>
+					
+				</div>
+				<div class="col text-center">
+					<div class="btn btn-info mx-2" onclick="nextday(), makesupply()">Make supplies</div>
+					<div class="btn btn-info mx-2" onclick="nextday(), generator(), costofday()">Search for item</div>
+				</div>
+				<div class="col">
+
 				</div>
 			</div>
 		</div>
   
-  <!-- Starting Modal -->
-  <div class="modal fade" id="startmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-	  <div class="modal-content bg-dark">
-		<div class="modal-header">
-		  <h5 class="modal-title" id="exampleModalLabel"><span class="text-light">Choose starting location</span></h5>
+		<!-- Starting Modal -->
+		<div class="modal fade" id="startmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			<div class="modal-content bg-dark">
+				<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel"><span class="text-light">Choose starting location</span></h5>
+				</div>
+				<div class="modal-body">
+				<div class="row p-3">
+					
+					<div class="col-4 text-center p-2 btn text-light">
+						<div class="border border-primary rounded p-2" onclick="startgame1()">
+							<img src="/images/earth.png" class="startico rounded" alt="">
+							<p class="pt-3">Earth</p>
+						</div>
+					</div>
+					<div class="col-4 text-center p-2 btn text-light">
+						<div class="border border-light rounded p-2" onclick="startgame2()">
+							<img src="/images/moon.png" class="startico rounded" alt="">
+							<p class="pt-3">Moon</p>
+						</div>
+					</div>
+					<div class="col-4 text-center p-2 btn text-light">
+						<div class="border border-warning rounded p-2" onclick="startgame3()">
+							<img src="/images/mars.png" class="startico rounded" alt="">
+							<p class="pt-3">Mars</p>
+						</div>
+					</div>
+
+				</div>
+				</div>
+			</div>
+			</div>
 		</div>
-		<div class="modal-body">
-		  <div class="row align-self-center">
-			<div class="col-4">asd</div>
-			<div class="col-4">asd</div>
-			<div class="col-4">asd</div>
-		  </div>
-		</div>
-	  </div>
-	</div>
-  </div>
 		
 		<footer id="footer" class="fixed-bottom p-2 bg-dark">
 			<span class="float-start fs-3">Time Travel</span>
-			<span class="float-end btn btn-warning align-middle">Next Day</span>
-			<span class="float-end fs-5 px-3">Days passed since start: 0</span>
+			<span class="float-end fs-5 px-3">Days passed since start: <span id="days">0</span></span>
 		</footer>
 	</body>
 

@@ -3,3 +3,17 @@ body{
 	color: #FFFFFF;
 	background-color: #444444;
 }
+
+.startico{
+	height: 8vw;
+	width: 8vw;
+}
+.items{
+	height: 9vw;
+	width: 9vw;
+}
+
+.nextmoveicon{
+	height: 6vw;
+	width: 6vw;
+}
